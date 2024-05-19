@@ -1,0 +1,117 @@
+Original Text:
+Provided proper attribution is provided, Google hereby grants permission to 
+reproduce the tables and figures in this paper solely for use in journalistic or 
+scholarly works.
+
+Attention Is All You Need
+
+Ashish Vaswani*  
+Google Brain  
+avaswani@google.com
+
+Noam Shazeer*  
+Google Brain  
+noam@google.com
+
+Niki Parmar*  
+Google Research  
+nikip@google.com
+
+Jakob Uszkoreit*  
+Google Research  
+usz@google.com
+
+Llion Jones*  
+Google Research  
+llion@google.com
+
+Aidan N. Gomez* †  
+University of Toronto  
+aidan@cs.toronto.edu
+
+Lukasz Kaiser*  
+Google Brain  
+lukaszkaiser@google.com
+
+Illia Polosukhin* †  
+illia.polosukhin@gmail.com
+
+Abstract
+
+The dominant sequence transduction models are based on complex recurrent or 
+convolutional neural networks that include an encoder and a decoder. The best 
+performing models also connect the encoder and decoder through an attention 
+mechanism. We propose a new simple network architecture, the Transformer, 
+based solely on attention mechanisms, dispensing with recurrence and convolutions 
+entirely. Experiments on two machine translation tasks show these models to 
+be superior in quality while being more parallelizable and requiring significantly 
+less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English- 
+to-German translation task, improving over the existing best results, including 
+ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task, 
+our model establishes a new single-model state-of-the-art BLEU score of 41.8 after 
+training for 3.5 days on eight GPUs, a small fraction of the training costs of the 
+best models from the literature. We show that the Transformer generalizes well to 
+other tasks by applying it successfully to English constituency parsing both with 
+large and limited training data.
+
+*Equal contribution. Listing order is random. Jakob proposed replacing RNNs with self-attention and started 
+the effort to evaluate this idea. Ashish, with Illia, designed and implemented the first Transformer models and 
+has been crucially involved in every aspect of this work. Noam proposed scaled dot-product attention, multi-head 
+attention and the parameter-free position representation and became the other person involved in every respect 
+detail. Niki designed, implemented, tested and evaluated countless model variants in our original codebase and 
+tensor2tensor. Llion also experimented with novel model variants, was responsible for our initial codebase and 
+efficient inference and visualizations. Lukasz and Aidan spent countless days helping us understand various parts of 
+implementing tensor2tensor, replacing our earlier codebase, greatly improving results and massively accelerating 
+our research.
+
+†Work performed while at Google Brain.  
+‡Work performed while at Google Research.
+
+31st Conference on Neural Information Processing Systems (NIPS 2017), Long Beach, CA, USA.
+
+Translated Text:
+在提供適當的歸屬後，Google特此授權僅為新聞或學術作品使用本論文中的表格和圖表。
+
+注意力是你所需要的一切
+
+Ashish Vaswani*  
+Google Brain  
+avaswani@google.com
+
+Noam Shazeer*  
+Google Brain  
+noam@google.com
+
+Niki Parmar*  
+Google Research  
+nikip@google.com
+
+Jakob Uszkoreit*  
+Google Research  
+usz@google.com
+
+Llion Jones*  
+Google Research  
+llion@google.com
+
+Aidan N. Gomez* †  
+多倫多大學  
+aidan@cs.toronto.edu
+
+Lukasz Kaiser*  
+Google Brain  
+lukaszkaiser@google.com
+
+Illia Polosukhin* †  
+illia.polosukhin@gmail.com
+
+摘要
+
+主流的序列轉導模型基於複雜的循環或卷積神經網絡，這些網絡包括編碼器和解碼器。表現最好的模型還通過注意力機制將編碼器和解碼器連接起來。我們提出了一種新的簡單網絡架構，稱為Transformer，完全基於注意力機制，完全摒棄了循環和卷積。在兩個機器翻譯任務上的實驗表明，這些模型在質量上優於現有模型，同時具有更高的並行性，並且訓練所需時間顯著減少。我們的模型在WMT 2014英語到德語翻譯任務中達到了28.4的BLEU分數，比現有的最佳結果（包括集成模型）提高了超過2個BLEU分。在WMT 2014英語到法語翻譯任務中，我們的模型在八個GPU上訓練3.5天後，創造了新的單模型最先進的BLEU分數41.8，訓練成本僅為文獻中最佳模型的一小部分。我們通過成功應用於英語句法分析任務，無論是大規模還是有限的訓練數據，證明了Transformer在其他任務中的良好泛化能力。
+
+*同等貢獻。列出順序是隨機的。Jakob提出用自注意力取代RNN，並開始評估這一想法的工作。Ashish與Illia一起設計並實現了第一個Transformer模型，並在這項工作的每個方面都至關重要。Noam提出了縮放點積注意力、多頭注意力和無參數位置表示，並成為每個細節都參與的人。Niki在我們的原始代碼庫和tensor2tensor中設計、實現、測試和評估了無數模型變體。Llion也嘗試了新穎的模型變體，負責我們的初始代碼庫和高效的推理和可視化。Lukasz和Aidan花了無數天幫助我們理解實現tensor2tensor的各個部分，取代了我們早期的代碼庫，大大改進了結果並大幅加速了我們的研究。
+
+†在Google Brain工作期間完成的工作。  
+‡在Google Research工作期間完成的工作。
+
+第31屆神經信息處理系統會議（NIPS 2017），美國加利福尼亞州長灘。
