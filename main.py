@@ -3,7 +3,7 @@ import base64
 import os
 from io import BytesIO
 
-import fitz  # PyMuPDF
+import pymupdf
 from docx import Document
 from openai import OpenAI
 from PIL import Image
@@ -16,7 +16,7 @@ client = OpenAI(api_key="YOUR_API_KEY")
 
 def pdf_page_to_base64(pdf_path, page_number):
     """Converts a PDF page to a base64 encoded image."""
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     page = doc.load_page(page_number)
     pix = page.get_pixmap()
     buffered = BytesIO()
@@ -81,7 +81,7 @@ def extract_and_translate_text(image_base64, model, target_language):
 
 def process_pdf(pdf_path, model, target_language):
     """Processes the entire PDF and returns original texts and translations."""
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     num_pages = doc.page_count
     original_texts = []
     translations = []
